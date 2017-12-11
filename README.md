@@ -10,5 +10,6 @@ A test project for travis-ci
 gem install travis
 
 GITHUB_TOKEN=5f48b3eb....
+travis login --github-token=$GITHUB_TOKEN
 travis encrypt -r subchen/travis-ci-examples $GITHUB_TOKEN
 ```
