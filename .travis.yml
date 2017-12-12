@@ -1,9 +1,18 @@
 language: go
 
-go:
-- 1.8
 
-script: make release
+go:
+  - 1.9
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install ruby ruby-ffi
+  - ruby -v
+  - sudo gem install fpm
+  - sudo apt-get install rpm
+
+script:
+  - make release
 
 deploy:
   provider: releases
