@@ -6,7 +6,7 @@ go:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install ruby ruby-ffi
+  - sudo apt-get install ruby ruby-dev ruby-ffi
   - ruby -v
   - sudo gem install fpm
   - sudo apt-get install rpm
