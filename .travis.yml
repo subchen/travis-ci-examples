@@ -10,6 +10,7 @@ before_install:
   - ruby -v
   - sudo gem install fpm
   - sudo apt-get install rpm
+  - dpkg -l | grep ffi
 
 script:
   - make release
