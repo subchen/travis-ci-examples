@@ -1,19 +1,16 @@
 language: go
 
-
 go:
   - 1.9
 
+services:
+  - docker
+
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install ruby ruby-dev
-  - ruby -v
-  - sudo gem install fpm
-  - sudo apt-get install rpm
-  - dpkg -l | grep ffi
+  - docker pull subchen/centos:7-dev
 
 script:
-  - make release
+  - docker run --rm -v $PWD:/go/src/test -w /go/src/test subchen/centos:7-dev make release
 
 deploy:
   provider: releases
