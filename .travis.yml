@@ -10,6 +10,7 @@ before_install:
   - docker pull subchen/centos:7-dev
 
 script:
+  - env
   - docker run --rm -v $PWD:/go/src/test -w /go/src/test subchen/centos:7-dev make release
 
 deploy:
