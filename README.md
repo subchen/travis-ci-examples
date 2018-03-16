@@ -11,5 +11,10 @@ gem install travis
 
 GITHUB_TOKEN=5f48b3eb....
 travis login --github-token=$GITHUB_TOKEN
+
+# value only
 travis encrypt -r subchen/travis-ci-examples $GITHUB_TOKEN
+
+# env: name=value
+travis encrypt -r subchen/travis-ci-examples GITHUB_TOKEN=$GITHUB_TOKEN
 ```
